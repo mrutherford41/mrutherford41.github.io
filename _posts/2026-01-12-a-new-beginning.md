@@ -1,7 +1,9 @@
 ---
 layout: post
 title: A New Beginning
-tags: none
+subtitle: Just Start
+author: Marcia Rutherford
+tags: life
 ---
 
 ## Just Start
