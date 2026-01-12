@@ -6,8 +6,6 @@ author: Marcia Rutherford
 tags: life
 ---
 
-## Just Start
-
 This blog has been in making for years now. Deciding what platform to use, the design, how to express your life with 1's and 0's accurately.
 Overthinking every minute detail. Technological hardware hiccups setting everything back.
 
