@@ -4,33 +4,193 @@ layout: minimal
 <style>
     @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 
-* {
-    font-family: 'Space Mono';
-}
-.hero-container {
-    text-align: center;
+*{
+       font-family: 'Space Mono'; 
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
+    body {
+        height: 100vh;
+    }
+        
+    li {
+        text-decoration: underline;
+        list-style: square;
 
-}
+        margin-bottom: 10px;
+    }
 
-.hero-container h1 {
-    font-size: 40px;
-}
+    li:last-child {
+        margin: 0;
+    }
+    
+        
+    .container {
+        height: 100vh;
 
-.full-height-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        display: flex;
+        justify-content: center;
+        align-items: center;
 
-</style>
-<section style="height: 100vh;" class="full-height-section">
-    <div class="hero-container">
-        <h1>i was here</h1>
-        <img src="/assets/img/body.png" alt="image of skeleton" style="width: 300px; height: auto;">
-    </div>
-</section>
+        position: relative;
+
+        text-align: center;
+    }
+
+    .container-background {
+        position: absolute;
+        inset: 0;
+        background: url('cloud-art.jpg') no-repeat center;
+        background-size: cover;
+
+        opacity: 40%;
+    }
+
+    .content {
+        text-align: center;
+
+        z-index: 20;
+    }
+
+    .content h1 {
+        font-size: 50px;
+    }
+
+    .body-container {
+        position: relative;
+
+        height: 90%;
+    }
+
+    .body-container img {
+        content: '';
+        position: absolute; 
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        top: -0%;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+
+        z-index: 20;
+    }
+
+    footer {
+        text-align: center;
+        padding: 10px 0px;
+        background: #f1f1f1;
+    }
+
+    .body-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-self: start;
+
+
+        height: 100%;
+    }
+
+    .body-griditem {
+        text-align: center;
+
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+    }
+
+        .container img {
+            transition: all 5s ease;
+        }
+
+        .container img:hover {
+            height: 500px;
+            cursor: pointer;
+
+            transform: rotate(360deg);
+
+            background: blue;
+        }
+
+
+        .hidden {
+          opacity: 0;
+        }
+        
+        .container a {
+            
+            position: absolute;
+
+            z-index: 100;
+
+            top: 0;
+            left: -20%;
+
+            height: 20px;
+            padding: 20px 0px;
+
+            width: 100px;
+
+            transition: opacity .4s ease;
+
+            font-size: 15px;
+            text-decoration: none;
+
+            background: black;
+            color: white;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        
+        
+    </style>
+    <body>
+        <!-- Your content goes here -->
+        <section class="container" style="position: relative; display: flex; justify-content: center; align-items: center; align-content: center;">
+            <div class="container-background"></div>
+            <div class="content">
+                <h1>i was here</h1>
+                <p>mind.heart.life</p>
+            </div>
+            <div style="position: absolute; inset: 0; opacity: 30%; width: 500px; height: 80%; top: 0; bottom: 0; left: 0; right: 0; margin: auto;">
+                <img src="body.jpg" style="width: auto; height: 100%;" onmouseover="showBtn()">
+                <a href="posts.html" id="enterBtn" class="hidden">Enter</a>
+            </div>
+        </section>
+        <section class="body-container" style="display: none;">
+            <div class="body-grid">
+                <div class="body-griditem">
+                    <ul>
+                        <li><a href="#">2026</a></li>
+                        <li><a href="#">2025</a></li>
+                    </ul>
+                </div>
+                <div class="body-griditem">
+                    <div style="z-index: -2;"><img src="body.jpg"/></div>
+                </div>
+                <div class="body-griditem">
+                    <div>
+                        <p>Current Favorite: exo by crushed</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <footer>
+            <p>@2026 awarmplacecreates</p>
+        </footer>
+        <script>
+            function showBtn(){
+                let btn = document.getElementById('enterBtn');
+                btn.classList.remove('hidden');
+            }
+        </script>
